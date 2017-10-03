@@ -1,3 +1,9 @@
+# Path wankery
+import sys
+sys.path.insert(0, './name-generator')
+
+from name_generator import Name_Generator
+
 import random
 
 first_names = ['Abrielle', 'Adair', 'Adara', 'Adriel', 'Aiyana', 'Alissa', 'Alixandra', 'Altair', 'Amara', 'Anatola', 'Anya', 'Arcadia', 'Ariadne', 'Arianwen', 'Aurelia', 'Aurelian', 'Aurelius', 'Avalon', 'Acalia', 'Alaire', 'Auristela', 'Bastian', 'Breena', 'Brielle', 'Briallan', 'Briseis', 'Cambria', 'Cara', 'Carys', 'Caspian', 'Cassia', 'Cassiel', 'Cassiopeia', 'Cassius', 'Chaniel', 'Cora', 'Corbin', 'Cyprian', 'Daire', 'Darius', 'Destin', 'Drake', 'Drystan', 'Dagen', 'Devlin', 'Devlyn', 'Eira', 'Eirian', 'Elysia', 'Eoin', 'Evadne', 'Eliron', 'Evanth', 'Fineas', 'Finian', 'Fyodor', 'Gareth', 'Gavriel', 'Griffin', 'Guinevere', 'Gaerwn', 'Ginerva', 'Hadriel', 'Hannelore', 'Hermione', 'Hesperos', 'Iagan', 'Ianthe', 'Ignacia', 'Ignatius', 'Iseult', 'Isolde', 'Jessalyn', 'Kara', 'Kerensa', 'Korbin', 'Kyler', 'Kyra', 'Katriel', 'Kyrielle', 'Leala', 'Leila', 'Lilith',
@@ -30,5 +36,8 @@ def compose_name():
 
 
 if __name__ == "__main__":
-    for i in range(5):
-        print(compose_name())
+
+    # Parse some input to decide what to generate.
+    name_gen = Name_Generator()
+    name_gen.setup("file path to json goes here")
+    name_gen.generate("json maybe goes here? Or maybe no args...")
