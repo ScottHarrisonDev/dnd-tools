@@ -1,6 +1,11 @@
 class Generator(object):
-    def setup(self, filepath):
+
+    def directory(self, file):
+        import os
+        return os.path.dirname(os.path.realpath(file))
+
+    def setup(self):
         raise NotImplementedError
 
-    def generate(self, json):
+    def generate(self):
         raise NotImplementedError
