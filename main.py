@@ -8,6 +8,10 @@ import argparse
 from simple_name_generator import Simple_Name_Generator
 from component_name_generator import Component_Name_Generator
 
+COMMAND_MAP = {
+    'simple': Simple_Name_Generator,
+    'compose': Component_Name_Generator
+}
 
 
 def main():
@@ -17,16 +21,7 @@ def main():
         description='Generate the names of various things through command line')
 
     # Required arguments to choose a generator.
-    # Maybe use a mutually exclusive group???
-    group = parser.add_mutually_exclusive_group()
-
-    group.add_argument(
-        'simple', metavar='\b',
-        help="Generate a first and second name from a predifined list.", type=str)
-
-    group.add_argument(
-        'compose', metavar='\b',
-        help="Generate a first and name from name components.", type=str)
+    parser.add_argument('command', choices=COMMAND_MAP.keys())
 
     # Optional arguments
     parser.add_argument(
@@ -34,18 +29,15 @@ def main():
 
     # TODO: How to add a flag for passing a number and repeating the generation that many times??
     parser.add_argument(
-        "-n", default=1,
+        "-n", metavar='\b', default=1,
         help='How many names would you like? You must provide a positive, non-zero number', type=int)
 
     args = parser.parse_args()
-    # print(args.count)
-    # print(args)
-    # switch over the args?
-    # Use a dict?
+    Chosen_Generator = COMMAND_MAP[args.command]
 
-    # name_gen = Component_Name_Generator()
-    # name_gen.setup()
-    # print(name_gen.generate())
+    name_gen = Chosen_Generator()
+    name_gen.setup()
+    print(name_gen.generate())
 
 
 if __name__ == '__main__':
