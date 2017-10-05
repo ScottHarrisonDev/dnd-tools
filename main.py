@@ -18,26 +18,44 @@ def main():
 
     # Parse some input to decide what to generate.
     parser = argparse.ArgumentParser(
-        description='Generate the names of various things through command line')
+        description='Generate the names of various things through command line. You must choose one these positional arguments:')
 
     # Required arguments to choose a generator.
     parser.add_argument('command', choices=COMMAND_MAP.keys())
 
+    # HACK: These optional arguments include metavar='\b' which was required to make the
+    # --help output not show capitalised versions of each argument. I know this is a stupid
+    # solution and a better formatting approach should be investigated,
+    # but I found the answer here: https://stackoverflow.com/a/16968273/6488602
+
     # Optional arguments
     parser.add_argument(
-        '-t', '--title', metavar='\b', help="Optionally generate a title to append to the name.", type=str)
+        '-t', '--title', metavar='\b', dest='title', help="Optionally generate a title to append to the name.", type=str)
 
-    # TODO: How to add a flag for passing a number and repeating the generation that many times??
     parser.add_argument(
-        "-n", metavar='\b', default=1,
-        help='How many names would you like? You must provide a positive, non-zero number', type=int)
+        "-n", '--number', metavar='\b', dest='number', default=1,
+        help='Optionally run the generator multiple times. You must provide a positive, non-zero number.', type=int)
 
     args = parser.parse_args()
+
+    repeats = args.number
+    title = args.title
+
+    # There must be a better way to ensure this? Maybe some argparse configuration?
+    if repeats <= 0:
+        print('Please supply a positive integer for your -n argument')
+
+    # TODO: Is there a nice way to add additional generators form the optional commands?
+    # Like Additional_Generators = A list of classes from a map.
+    # Loop that list and execute each generator, appending the results?
+
+    # Choose a generator, execute it, jobs a good'un.
     Chosen_Generator = COMMAND_MAP[args.command]
 
-    name_gen = Chosen_Generator()
-    name_gen.setup()
-    print(name_gen.generate())
+    for i in range(repeats):
+        name_gen = Chosen_Generator()
+        name_gen.setup()
+        print(name_gen.generate())
 
 
 if __name__ == '__main__':
