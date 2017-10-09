@@ -1,19 +1,23 @@
 # Path wankery
 import sys
 sys.path.insert(0, './name-generators')
+sys.path.insert(0, './tavern-generator')
 
 import argparse
 
 # Import all the generator files.
 from simple_name_generator import Simple_Name_Generator
 from component_name_generator import Component_Name_Generator
+from tavern_generator import Tavern_Generator
+
 
 COMMAND_MAP = {
     'simple': Simple_Name_Generator,
-    'compose': Component_Name_Generator
+    'compose': Component_Name_Generator,
+    'tavern': Tavern_Generator
 }
 
-
+# TODO: Split the argparse setup into it's own function?
 def main():
 
     # Parse some input to decide what to generate.
@@ -55,7 +59,8 @@ def main():
     for i in range(repeats):
         name_gen = Chosen_Generator()
         name_gen.setup()
-        print(name_gen.generate())
+        name = name_gen.generate()
+        print(name)
 
 
 if __name__ == '__main__':
