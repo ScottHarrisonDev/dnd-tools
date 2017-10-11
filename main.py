@@ -18,6 +18,10 @@ COMMAND_MAP = {
 }
 
 # TODO: Split the argparse setup into it's own function?
+
+
+
+
 def main():
 
     # Parse some input to decide what to generate.

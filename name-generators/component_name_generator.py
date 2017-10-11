@@ -13,7 +13,7 @@ class Component_Name_Generator(Generator):
         # Get json with the filepath
         dir_path = self.directory(__file__)
 
-        with open(dir_path + '\\name_components.json') as json_file:
+        with open(dir_path + '/name_components.json') as json_file:
             self.json = json.loads(json_file.read())
         return self.json
 

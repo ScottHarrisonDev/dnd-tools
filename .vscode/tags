@@ -1,0 +1,53 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+COMMAND_MAP	../main.py	/^COMMAND_MAP = {$/;"	kind:variable	line:14
+Component_Name_Generator	../main.py	/^from component_name_generator import Component_Name_Generator$/;"	kind:namespace	line:10
+Component_Name_Generator	../name-generators/component_name_generator.py	/^class Component_Name_Generator(Generator):$/;"	kind:class	line:8
+FUNCTION_MAP	../argument_parsing_example.py	/^FUNCTION_MAP = {'a': a,$/;"	kind:variable	line:20
+Generator	../generator.py	/^class Generator(object):$/;"	kind:class	line:1
+Generator	../name-generators/component_name_generator.py	/^from generator import Generator$/;"	kind:namespace	line:5
+Generator	../name-generators/simple_name_generator.py	/^from generator import Generator$/;"	kind:namespace	line:5
+Generator	../tavern-generator/tavern_generator.py	/^from generator import Generator$/;"	kind:namespace	line:4
+Simple_Name_Generator	../main.py	/^from simple_name_generator import Simple_Name_Generator$/;"	kind:namespace	line:9
+Simple_Name_Generator	../name-generators/simple_name_generator.py	/^class Simple_Name_Generator(Generator):$/;"	kind:class	line:8
+Tavern_Generator	../main.py	/^from tavern_generator import Tavern_Generator$/;"	kind:namespace	line:11
+Tavern_Generator	../tavern-generator/tavern_generator.py	/^class Tavern_Generator(Generator):$/;"	kind:class	line:7
+a	../argument_parsing_example.py	/^def a():$/;"	kind:function	line:12
+argparse	../argument_parsing_example.py	/^import argparse$/;"	kind:namespace	line:7
+argparse	../main.py	/^import argparse$/;"	kind:namespace	line:6
+args	../argument_parsing_example.py	/^args = parser.parse_args()$/;"	kind:variable	line:25
+argument_parsing_example.py	../argument_parsing_example.py	1;"	kind:file	line:1
+b	../argument_parsing_example.py	/^def b():$/;"	kind:function	line:16
+component_name_generator.py	../name-generators/component_name_generator.py	1;"	kind:file	line:1
+description	../argument_parsing_example.py	/^    description='Generate the names of various things through command line')$/;"	kind:variable	line:9
+directory	../generator.py	/^    def directory(self, file):$/;"	kind:member	line:3
+func	../argument_parsing_example.py	/^func = FUNCTION_MAP[args.command]$/;"	kind:variable	line:27
+generate	../generator.py	/^    def generate(self):$/;"	kind:member	line:10
+generate	../name-generators/component_name_generator.py	/^    def generate(self):$/;"	kind:member	line:20
+generate	../name-generators/simple_name_generator.py	/^    def generate(self):$/;"	kind:member	line:20
+generate	../tavern-generator/tavern_generator.py	/^    def generate(self):$/;"	kind:member	line:34
+generator.py	../generator.py	1;"	kind:file	line:1
+json	../name-generators/component_name_generator.py	/^    json = ''$/;"	kind:variable	line:10
+json	../name-generators/component_name_generator.py	/^import json$/;"	kind:namespace	line:2
+json	../name-generators/simple_name_generator.py	/^    json = ''$/;"	kind:variable	line:10
+json	../name-generators/simple_name_generator.py	/^import json$/;"	kind:namespace	line:2
+json	../tavern-generator/tavern_generator.py	/^import json$/;"	kind:namespace	line:1
+load_json	../tavern-generator/tavern_generator.py	/^    def load_json(self, filepath):$/;"	kind:member	line:28
+main	../main.py	/^def main():$/;"	kind:function	line:21
+main.py	../main.py	1;"	kind:file	line:1
+os	../generator.py	/^        import os$/;"	kind:namespace	line:4
+parser	../argument_parsing_example.py	/^parser = argparse.ArgumentParser($/;"	kind:variable	line:8
+random	../name-generators/component_name_generator.py	/^import random$/;"	kind:namespace	line:3
+random	../name-generators/simple_name_generator.py	/^import random$/;"	kind:namespace	line:3
+random	../tavern-generator/tavern_generator.py	/^import random$/;"	kind:namespace	line:2
+setup	../generator.py	/^    def setup(self):$/;"	kind:member	line:7
+setup	../name-generators/component_name_generator.py	/^    def setup(self):$/;"	kind:member	line:12
+setup	../name-generators/simple_name_generator.py	/^    def setup(self):$/;"	kind:member	line:12
+setup	../tavern-generator/tavern_generator.py	/^    def setup(self):$/;"	kind:member	line:19
+simple_name_generator.py	../name-generators/simple_name_generator.py	1;"	kind:file	line:1
+sys	../main.py	/^import sys$/;"	kind:namespace	line:2
+tavern_generator.py	../tavern-generator/tavern_generator.py	1;"	kind:file	line:1

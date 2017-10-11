@@ -13,7 +13,7 @@ class Simple_Name_Generator(Generator):
         # Get json with the filepath
         dir_path = self.directory(__file__)
 
-        with open(dir_path + '\simple_names.json') as json_file:
+        with open(dir_path + '/simple_names.json') as json_file:
             self.json = json.loads(json_file.read())
         return self.json
 
