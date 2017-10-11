@@ -49,4 +49,4 @@ class Tavern_Generator(Generator):
         # Get a noun
         noun = random.choice(self.nouns['nouns'])
 
-        return 'The {} {}'.format(descriptor, noun).title()
+        return '{} {}'.format(descriptor, noun).title()
